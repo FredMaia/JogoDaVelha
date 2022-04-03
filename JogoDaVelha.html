@@ -1,0 +1,270 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background: rgb(5, 0, 46);
+            color: whitesmoke;
+            font-family: Helvetica;
+            text-align: center;
+        }
+
+        .box {
+            width: 350px;
+            /* height: 350px; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-content: space-between;
+            left: 50%;
+        }
+
+        .square {
+            background: rgb(224, 224, 224);
+            color: rgb(5, 0, 46);
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px;
+            font-size: 40px;
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid #00087a;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jogo da velha</h1>
+    <button onclick="reset()">RESET</button>
+
+    <br> <br> <br>
+
+    <div class="container">
+        <div class="box">
+            <div class="square" id="a11" onclick="a11Clicked()"></div>
+            <div class="square" id="a12" onclick="a12Clicked()"></div>
+            <div class="square" id="a13" onclick="a13Clicked()"></div>
+        </div>
+        <br>
+        <div class="box">
+            <div class="square" id="a21" onclick="a21Clicked()"></div>
+            <div class="square" id="a22" onclick="a22Clicked()"></div>
+            <div class="square" id="a23" onclick="a23Clicked()"></div>
+        </div>
+        <br>
+        <div class="box">
+            <div class="square" id="a31" onclick="a31Clicked()"></div>
+            <div class="square" id="a32" onclick="a32Clicked()"></div>
+            <div class="square" id="a33" onclick="a33Clicked()"></div>
+        </div>
+    </div>
+    <script>
+        var a11 = document.getElementById("a11")
+        var a12 = document.getElementById("a12")
+        var a13 = document.getElementById("a13")
+        var a21 = document.getElementById("a21")
+        var a22 = document.getElementById("a22")
+        var a23 = document.getElementById("a23")
+        var a31 = document.getElementById("a31")
+        var a32 = document.getElementById("a32")
+        var a33 = document.getElementById("a33")
+        var a11MarkedX = false
+        var a12MarkedX = false
+        var a13MarkedX = false
+        var a21MarkedX = false
+        var a22MarkedX = false
+        var a23MarkedX = false
+        var a31MarkedX = false
+        var a32MarkedX = false
+        var a33MarkedX = false
+
+        var a11MarkedO = false
+        var a12MarkedO = false
+        var a13MarkedO = false
+        var a21MarkedO = false
+        var a22MarkedO = false
+        var a23MarkedO = false
+        var a31MarkedO = false
+        var a32MarkedO = false
+        var a33MarkedO = false
+
+        var number = 0
+
+        var intervalo
+
+        function a11Clicked() {
+            if (number % 2 == 0 && !a11MarkedO) {
+                a11.innerHTML = "X"
+                a11MarkedX = true
+                number++
+            } else if (!a11MarkedX) {
+                a11.innerHTML = "O"
+                a11MarkedO = true
+                number++
+            }
+        }
+        function a12Clicked() {
+            if (number % 2 == 0 && !a12MarkedO) {
+                a12.innerHTML = "X"
+                a12MarkedX = true
+                number++
+            } else if (!a12MarkedX) {
+                a12.innerHTML = "O"
+                a12MarkedO = true
+                number++
+            }
+        }
+        function a13Clicked() {
+            if (number % 2 == 0 && !a13MarkedO) {
+                a13.innerHTML = "X"
+                a13MarkedX = true
+                number++
+            } else if (!a13MarkedX) {
+                a13.innerHTML = "O"
+                a13MarkedO = true
+                number++
+            }
+        }
+        function a21Clicked() {
+            if (number % 2 == 0 && !a21MarkedO) {
+                a21.innerHTML = "X"
+                a21MarkedX = true
+                number++
+            } else if (!a21MarkedX) {
+                a21.innerHTML = "O"
+                a21MarkedO = true
+                number++
+            }
+        }
+        function a22Clicked() {
+            if (number % 2 == 0 && !a22MarkedO) {
+                a22.innerHTML = "X"
+                a22MarkedX = true
+                number++
+            } else if (!a22MarkedX) {
+                a22.innerHTML = "O"
+                a22MarkedO = true
+                number++
+            }
+        }
+        function a23Clicked() {
+            if (number % 2 == 0 && !a23MarkedO) {
+                a23.innerHTML = "X"
+                a23MarkedX = true
+                number++
+            } else if (!a23MarkedX) {
+                a23.innerHTML = "O"
+                a23MarkedO = true
+                number++
+            }
+        }
+        function a31Clicked() {
+            if (number % 2 == 0 && !a31MarkedO) {
+                a31.innerHTML = "X"
+                a31MarkedX = true
+                number++
+            } else if (!a31MarkedX) {
+                a31.innerHTML = "O"
+                a31MarkedO = true
+                number++
+            }
+        }
+        function a32Clicked() {
+            if (number % 2 == 0 && !a32MarkedO) {
+                a32.innerHTML = "X"
+                a32MarkedX = true
+                number++
+            } else if (!a32MarkedX) {
+                a32.innerHTML = "O"
+                a32MarkedO = true
+                number++
+            }
+        }
+        function a33Clicked() {
+            if (number % 2 == 0 && !a33MarkedO) {
+                a33.innerHTML = "X"
+                a33MarkedX = true
+                number++
+            } else if (!a33MarkedX) {
+                a33.innerHTML = "O"
+                a33MarkedO = true
+                number++
+            }
+        }
+
+        function reset() {
+            number = 0
+            a11.innerHTML = ""
+            a12.innerHTML = ""
+            a13.innerHTML = ""
+            a21.innerHTML = ""
+            a22.innerHTML = ""
+            a23.innerHTML = ""
+            a31.innerHTML = ""
+            a32.innerHTML = ""
+            a33.innerHTML = ""
+
+            a11MarkedX = false
+            a12MarkedX = false
+            a13MarkedX = false
+            a21MarkedX = false
+            a22MarkedX = false
+            a23MarkedX = false
+            a31MarkedX = false
+            a32MarkedX = false
+            a33MarkedX = false
+            a11MarkedO = false
+            a12MarkedO = false
+            a13MarkedO = false
+            a21MarkedO = false
+            a22MarkedO = false
+            a23MarkedO = false
+            a31MarkedO = false
+            a32MarkedO = false
+            a33MarkedO = false
+            clearInterval(intervalo)
+            intervalo = setInterval(verify, 500)
+        }
+
+        function verify() {
+            if (a11MarkedX && a12MarkedX && a13MarkedX ||
+                a21MarkedX && a22MarkedX && a23MarkedX ||
+                a31MarkedX && a32MarkedX && a33MarkedX ||
+                a11MarkedX && a21MarkedX && a31MarkedX ||
+                a12MarkedX && a22MarkedX && a32MarkedX ||
+                a13MarkedX && a23MarkedX && a33MarkedX ||
+                a11MarkedX && a22MarkedX && a33MarkedX ||
+                a13MarkedX && a22MarkedX && a31MarkedX
+            ) {
+                clearInterval(intervalo)
+                alert("player 1 ganhou")
+                reset() //apagar se der problema
+            } else if (a11MarkedO && a12MarkedO && a13MarkedO ||
+                a21MarkedO && a22MarkedO && a23MarkedO ||
+                a31MarkedO && a32MarkedO && a33MarkedO ||
+                a11MarkedO && a21MarkedO && a31MarkedO ||
+                a12MarkedO && a22MarkedO && a32MarkedO ||
+                a13MarkedO && a23MarkedO && a33MarkedO ||
+                a11MarkedO && a22MarkedO && a33MarkedO ||
+                a13MarkedO && a22MarkedO && a31MarkedO
+            ) {
+                clearInterval(intervalo)
+                alert("player 2 ganhou")
+                reset() //apagar se der problema
+            }
+        }
+
+
+        intervalo = setInterval(verify, 500)
+    </script>
+</body>
+
+</html>
